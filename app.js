@@ -29,17 +29,18 @@ function clearTodo(e) {
 
 
 function createNewTodo(e) {
+    const inputEl = inputElement.value.trim();
     if(formSelect.value=="Choose the repo") {
         ui.showAlert("warning","Please choose the repo");
-    } else if(inputElement.value=="") {
+    } else if(inputEl=="") {
         ui.showAlert("danger","please type a todo");
 
     } else {
-        const content = inputElement.value.trim();
+        const content = inputEl;
         const repo = formSelect.value;
         const todo = new Todo(content,repo);
-        ui.addToUI(todo);
         Storage.addToStorage(todo);
+        ui.loadUI();
         ui.showAlert("success", "You added one todo successfully")
     }
 
@@ -58,6 +59,7 @@ function connectGithub() {
     github.getGithubData(username)
     .then(response => {
         ui.showRepos(response.repo);
+        ui.loadUserData(response.user);
     })
     .catch(err => console.log(err));
 

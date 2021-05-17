@@ -18,6 +18,14 @@ class UI {
         });
     }
 
+    loadUserData(user) {
+        document.getElementById("userName").innerText=user.name;
+        document.getElementById("userPhoto").src = user.avatar_url;
+        document.getElementById("bio").innerText = user.bio;
+        document.getElementById("lastUpdated").innerText = user.updated_at;
+        console.log(typeof user.updated_at)
+    }
+
 
     addToUI(todo) {
         this.tableBody.innerHTML += `        
@@ -36,7 +44,7 @@ class UI {
 
     showAlert(type, message) {
         let div =document.createElement("div")
-        div.className =`alert alert-${type} mt-1`
+        div.className =`alert alert-${type} mt-3`
         div.innerText =message;
         document.getElementById("alert").appendChild(div);
         setTimeout(()=> {
@@ -45,11 +53,14 @@ class UI {
     }
 
     loadUI() {
+        this.tableBody.innerHTML="";
         let todos = Storage.getTodosFromStorage();
         todos.forEach((todo)=>{
             this.addToUI(todo);
         })
     }
+
+
 
 }
 

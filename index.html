@@ -21,16 +21,17 @@
 <body>
     <div class="container">
         <div class="card mt-3">
-            <div class="card-header">
-                User Name
+            <div class="card-header text-center text-light" id="app-header">
+                My Todo List For Github Repos
             </div>
             <div class="card-body d-flex justify-content-center align-items-center">
                 <div class="text-center col-4 me-3">
-                    <img src="https://avatars.githubusercontent.com/u/79147563?v=4" class="img-fluid" alt="...">
+                    <img src="" class="img-fluid" alt="..." id="userPhoto">
                 </div>
                 <div class="info-user col-8">
-                    <h5 class="card-title">User Section</h5>
-                    <p class="card-text">Additional info about user</p>
+                    <h5 class="card-title" id="userName"></h5>
+                    <p class="card-text" id="bio"></p>
+                    <p class="card-text">Last updated: <span id="lastUpdated"></span></p>
                 </div>
 
             </div>
@@ -41,7 +42,7 @@
                     </select>
                     <input type="text" class="form-control" id="inputElement"
                         placeholder="Write todo to your related repos" autocomplete="off">
-                    <button class="btn btn-outline-secondary" type="submit" id="button-addon2">Add It</button>
+                    <button class="btn btn-primary" type="submit" id="button-addon2">Add It</button>
                 </div>
             </form>
         </div>
@@ -50,7 +51,7 @@
         <div class="card mt-3">
         <table class="table">
             <thead>
-              <tr>
+              <tr id="tableHeader">
                 <th scope="col" style="width:40%;">Repo</th>
                 <th scope="col">Todo</th>
                 <th scope="col"></th>
