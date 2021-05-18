@@ -6,32 +6,61 @@ body {
 
 .container {
     max-width: 750px;
-    height: 100vh;
+    min-height: 100vh;
 }
 
 #app-header{
     background-color: #473CBF;
 }
 
+#userInfo {
+    background-color: #473CBF;
+    border-radius: 8px 8px 0 0;
+}
+
+#bio,
+#repoQuantityMaster,
+#lastUpdatedMaster {
+    font-size: 0.8rem;
+}
+
 .card {
     border: none;
+    border-radius: 8px ;
+
 }
 
 img {
-    max-height: 200px;
-    border: 2px solid rgb(138, 138, 138);
+    max-height: 130px;
     border-radius: 50%;
 }
 
 .btn-primary {
     background-color: #473CBF;
+    border: none;
 }
 
 .btn-primary:hover {
     background-color: #6f68c0;
 }
 
+#todoDiv {
+    min-height: 200px;
+}
+
 #tableHeader {
     background-color: #473CBF;
     color: white;
+    overflow: hidden;
+}
+
+#table-left-top {
+    border-radius: 8px 0 0 0;
+}
+#table-right-top {
+    border-radius: 0 8px 0 0;
+}
+
+.far.fa-trash-alt {
+    color: rgb(255, 82, 82);
 }

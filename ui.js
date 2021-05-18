@@ -21,18 +21,21 @@ class UI {
     loadUserData(user) {
         document.getElementById("userName").innerText=user.name;
         document.getElementById("userPhoto").src = user.avatar_url;
+        document.getElementById("login").innerText = user.login;
         document.getElementById("bio").innerText = user.bio;
-        document.getElementById("lastUpdated").innerText = user.updated_at;
-        console.log(typeof user.updated_at)
+        document.getElementById("lastUpdated").innerText = user.updated_at.slice(0,10);
+        document.getElementById("location").innerText = user.location;
+        document.getElementById("repoQuantity").innerText = user.public_repos;
     }
 
 
     addToUI(todo) {
         this.tableBody.innerHTML += `        
         <tr>
+        <td></td>
         <td>${todo.repo}</td>
         <td>${todo.content}</td>
-        <td><a href="#"><i class="fas fa-times"></i></a></td>
+        <td><a href="#"><i class="far fa-trash-alt"></i></a></td>
       </tr>`
 
     }

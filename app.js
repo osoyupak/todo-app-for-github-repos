@@ -1,10 +1,11 @@
-//Choosing DOM Elements
+let username=Storage.checkUsername();
+
+ //Choosing DOM Elements
 const inputForm = document.getElementById("inputForm");
 const inputElement = document.getElementById("inputElement");
 const formSelect = document.getElementById("form-select");
 const tableBody = document.getElementById("tableBody");
 
-let username = "osoyupak";
 const github = new Github();
 const ui = new UI();
 
@@ -19,7 +20,7 @@ function eventlisteners() {
 
 
 function clearTodo(e) {
-    if(e.target.className=="fas fa-times") {
+    if(e.target.className=="far fa-trash-alt") {
         ui.clearfromUI(e);
         Storage.removeFromStorage(e);
         ui.showAlert("primary", "You completed one item. Congratulations!")

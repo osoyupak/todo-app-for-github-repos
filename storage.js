@@ -1,12 +1,22 @@
 class Storage {
 
+    static checkUsername() {
+        let username;
+        if(localStorage.getItem("username")==null) {
+            username = window.prompt("Please type your github username");
+            localStorage.setItem("username", username);
+        } else {
+            username = localStorage.getItem("username");
+        }
+        return username;
+    }
+
     static addToStorage(newTodo) {
         let todos = this.getTodosFromStorage();
         todos.push(newTodo);
         todos = this.sortTodos(todos);
         localStorage.setItem("todos", JSON.stringify(todos));
     }
-
 
     static removeFromStorage(e) {
         let removeContent = e.target.parentElement.parentElement.parentElement.firstChild.nextSibling.nextSibling.nextSibling.innerText;
