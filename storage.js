@@ -19,7 +19,8 @@ class Storage {
     }
 
     static removeFromStorage(e) {
-        let removeContent = e.target.parentElement.parentElement.parentElement.firstChild.nextSibling.nextSibling.nextSibling.innerText;
+        let removeContent = e.target.parentElement.parentElement.parentElement.firstChild.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.innerText;
+        console.log(removeContent)
         let todos = this.getTodosFromStorage();
         todos.forEach((todo, index) => {
             if (todo.content == removeContent) {
